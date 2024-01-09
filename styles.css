@@ -1,24 +1,265 @@
 body {
   background-color: black;
-  color: red;
+  color: yellow;
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 180px;
 }
+
 .menu-item {
-  margin: 20px;
-  padding: 10px;
-  border: 2px solid red;
+  margin: 15px;
+  padding: 5px;
+  border: 2px solid yellow;
+  background-color: #141414;
+  border-radius: 1%;
 }
+
 .menu-item img {
   width: 200px;
   height: 200px;
+  border-radius: 2%;
 }
-button {
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.title-text {
+  font-size: 20px; 
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 50px;
+  align-self: center;
+}
+
+.title-img img {
+  width: 350px;
+  height: 240px;
+  margin-bottom: 10px;
   margin-top: 20px;
+  border-radius: 1%;
 }
+
+.title h1 {
+  font-size: 30px; 
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+button,
+.add-to-cart-button,
+.checkout-button {
+  background-color: yellow;
+  border: none;
+  color: black;
+  padding: 12px 24px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  border-radius: 4%;
+  cursor: pointer;
+}
+
+button:hover,
+.add-to-cart-button:hover,
+.checkout-button:hover {
+  background-color: #ffd700;
+}
+
+
+.nav-bar {
+  background-color: #ffd700; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.nav-bar a {
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+  color: yellow; 
+  background-color: #333; 
+}
+
+
+.nav-logo {
+  margin-right:100px; 
+}
+
+.nav-logo img {
+  width: 90px; 
+  height: auto; 
+  border-radius: 10%;
+}
+
+.nav-pages a + a {
+  margin-left: 60px;
+}
+
+
+
+.menu {
+  display: none; 
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav-pages {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  background-color: #141414;
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid yellow;
+  width: 70%;
+  max-width: 500px;
+  text-align: center;
+  color: yellow;
+}
+
+.modal-content h2 {
+  color: yellow;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: yellow;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-image-container {
+  position: relative;
+  max-width: 100%;
+  max-height: 150px;
+  margin: 0 auto;
+}
+
+.modal-image {
+  width: 70%;
+  height: 70%;
+  border-radius: 8px;
+}
+
+#nomeSanduiche {
+  position: absolute;
+  top: 30px; /* Aumentei a distância do nome da imagem */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: yellow;
+  font-size: 28px; 
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.modal-content p {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  color: yellow;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modal-content input[type="radio"] {
+  margin-right: 5px;
+}
+
+.modal-content input[type="radio"] + label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.modal-content textarea,
+.modal-content select,
+.form-input {
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 2px solid yellow;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+}
+
+#observacoes {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.carrinho-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+}
+
+.carrinho-item img {
+      max-width: 50px;
+      max-height: 50px;
+      margin-right: 10px;
+}
+
+.carrinho-item button {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+}
+
+

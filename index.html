@@ -1,36 +1,160 @@
 <!DOCTYPE html>
-<html><head><link rel="stylesheet" type="text/css" href="styles.css">
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-	<body>
-		<h1>Bemvindo ao Coliseu Parrila Burguer!</h1>
-		<p>Hamburguer artesanal na parrilla argentina.</p>
-		
-		<div class="menu-item">
-			<h2>Duplo Smash</h2>
-			<img src="doubleSmash.jpg" alt="Duplo Smash">
-			<p>Delicioso hamburguer tradicional feito com ingredientes frescos.</p>
-			<input type="number" value="1" min="1" max="10">
-		</div>
-		
-		<div class="menu-item">
-			<h2>Pao do Império</h2>
-			<img src="3paoImperio.jpg" alt="Pão do Império">
-			<p>Porção de batatas fritas crocantes e saborosas.</p>
-			<input type="number" value="1" min="1" max="10">
-		</div>
+<body>
+  <nav>
+    <div class="nav-bar">
+      <div class="nav-logo">
+        <img src="Cardapio/4.png" alt="LOGO">
+      </div>
+      <div class="nav-pages">
+        <a href="index.html">Home</a>
+        <a href="#" onclick="exibirSacola()">Carrinho de Compras</a>
+      </div>
+    </div>
+  </nav>
 
-		<div class="menu-item">
-			<h2>Ceasar Bacon</h2>
-			<img src="4Ceasar.jpg" alt="Ceasar Bacon">
-			<p>Porção de batatas fritas crocantes e saborosas.</p>
-			<input type="number" value="1" min="1" max="10">
-		</div>
-		
-		<button onclick="enviarPedido()">Enviar Pedido via WhatsApp
-		</button>
+  <div class="title">
+    <div class="title-text">
+      <h1>COLISEU PARRILLA BURGUER</h1>
+      <h3>Hamburguer artesanal na parrilla argentina.</h3>
+    </div>
+    <div class="title-img">
+      <img src="Cardapio/max-bg.png" alt="burger-coliseu" border="0">
+    </div>
+  </div>
 
-		
-		<script src="script.js">
-		</script>
-	</body>
+  <div class="menu-combo">
+    <h2>Combos</h2>
+    <div class="menu-item" data-nome="Liseira">
+      <h2>Liseira</h2>
+      <img src="Cardapio/Promocoes/ComboLiseira.png" alt="Liseira">
+      <p>Pão, Molho Artesanal, Smash 60g, Alface e Tomate + Pão, Molho Artesanal, Smash 60g, Ovo, Alface e Tomate + Batata G + Guaraná 1l.</p>
+      <p>R$50,00</p>
+    </div>
+
+    <div class="menu-item" data-nome="Combo Ceasar">
+      <h2>Combo Ceasar</h2>
+      <img src="Cardapio/Promocoes/comboCesar4.png" alt="Ceasar Combo">
+      <p>Pão de parmesão, Molho Artesanal, Blend 120g, Coalho, Bacon + Batata + Refri.</p>
+      <p>R$31,90</p>
+    </div>
+  </div>
+
+  <div class="menu-smash">
+    <h2>Smash</h2>
+    <div class="menu-item" data-nome="Cesarino">
+      <h2>Cesarino</h2>
+      <img src="Cardapio/1cesarino.jpg" alt="Cesarino">
+      <p>Pão, Molho Artesanal, Smash 60, Alface e Tomate.</p>
+      <p>R$15,00</p>
+    </div>
+
+    <div class="menu-item" data-nome="Roman Egg">
+      <h2>Roman Egg</h2>
+      <img src="Cardapio/2romanEgg.jpg" alt="Roman Egg">
+      <p>Pão, Molho Artesanal, Smash 60g, Ovo, Alface e Tomate.</p>
+      <p>R$17,00</p>
+    </div>
+
+    <div class="menu-item" data-nome="Duplo Smash">
+      <h2>Duplo Smash</h2>
+      <img src="Cardapio/doubleSmash.jpg" alt="Duplo Smash">
+      <p>Pão de Parmesão, Molho Artesanal, 2xSmash de 60g e 2xCheddar.</p>
+      <p>R$18,00</p>
+    </div>
+  </div>
+
+  <div class="menu-item" data-nome="Pão do Império">
+    <h2>Pão do Império</h2>
+    <img src="Cardapio/3paoImperio.jpg" alt="Pão do Império">
+    <p>Pão de Parmesão, Molho Artesanal, Blend 120g, Coalho e Cebola Caramelizada.</p>
+    <p>R$18,00</p>
+  </div>
+
+  <div class="menu-burguer">
+    <h2>Burguer</h2>
+    <div class="menu-item" data-nome="Ceasar Bacon">
+      <h2>Ceasar Bacon</h2>
+      <img src="Cardapio/4Ceasar.jpg" alt="Ceasar Bacon">
+      <p>Pão de Parmesão, Molho artesanal, Blend 120g, Coalho e Bacon.</p>
+      <p>R$20,00</p>
+    </div>
+
+    <div class="menu-item" data-nome="Maximus Cheddar">
+      <h2>Maximus Cheddar</h2>
+      <img src="Cardapio/5max.jpg" alt="Max">
+      <p>Pão de Parmesão, Molho artesanal, Blend 120g, Fondue de Cheddar, Cebola Crispy, Farofa de Bacon.</p>
+      <p>R$23,00</p>
+    </div>
+
+    <div class="menu-item" data-nome="Coliseu Burguer">
+      <h2>Coliseu Burguer</h2>
+      <img src="Cardapio/6Coliseu.jpg" alt="Coliseu">
+      <p>Pão de Parmesão, Molho artesanal, Blend 180g, Coalho, Farofa de Bacon, Ovo, Cebola Caramelizada e Cream Cheese.</p>
+      <p>R$30,00</p>
+    </div>
+
+    <div class="menu-item" data-nome="Churras">
+      <h2>Churras</h2>
+      <img src="Cardapio/7churras.jpg" alt="Churras">
+      <p>Pão de Parmesão, Pasta de Alho, Maminha, Queijo Cremoso, Vinagrete, Bacon Crocante</p>
+      <p>R$33,00</p>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <span id="nomeSanduiche"></span>
+      <img id="modal-img" src="" alt="Item do Menu">
+      <form>
+        <label for="pontoCarne">Ponto da Carne:</label>
+        <div>
+          <input type="radio" id="bemPassado" name="pontoCarne" value="bem-passado">
+          <label for="bemPassado">Bem Passado</label>
+
+          <input type="radio" id="aoPonto" name="pontoCarne" value="ao-ponto">
+          <label for="aoPonto">Ao Ponto</label>
+        </div>
+
+        <label for="quantidadeSal">Quantidade de Sal:</label>
+        <div>
+          <input type="radio" id="bastante" name="quantidadeSal" value="bastante">
+          <label for="bastante">Bastante</label>
+
+          <input type="radio" id="pouco" name="quantidadeSal" value="pouco">
+          <label for="pouco">Pouco</label>
+        </div>
+
+       <label for="observacoes">Observações:</label>
+	<textarea id="observacoes" name="observacoes" rows="4"></textarea>
+
+	<button class="add-to-cart-button" onclick="adicionarAoPedido()">Adicionar ao Carrinho</button>
+
+      </form>
+    </div>
+  </div>
+
+<div id="sacola-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharSacola()">&times;</span>
+    <h2>Sacola</h2>
+    <ul id="carrinho-lista"></ul>
+    
+    <form id="contato-form">
+      	<input type="text" class="form-input" placeholder="Seu Nome" required>
+	<input type="text" class="form-input" placeholder="Seu Número de Telefone" required>
+	<input type="text" class="form-input" placeholder="Sua Localização" required>
+
+      <button class="checkout-button" onclick="enviarPedido()">Enviar Pedido via WhatsApp</button>
+    </form>
+  </div>
+</div>
+<script src="script.js"></script>
+
+
+</body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Adicione o link para o arquivo de estilos, se necessário -->
+</head>
+<body>
+  <h1>Pedidos</h1>
+
+  <ul id="lista-pedidos">
+    <!-- A lista de pedidos será exibida aqui -->
+  </ul>
+
+  <button onclick="enviarPedidosWhatsApp()">Enviar Pedidos via WhatsApp</button>
+
+  <script>
+    function exibirPedidos() {
+      var listaPedidos = document.getElementById('lista-pedidos');
+      listaPedidos.innerHTML = '';
+
+      var pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+
+      pedidos.forEach(function (pedido, index) {
+        var li = document.createElement('li');
+        li.textContent = `Pedido ${index + 1}: Ponto da Carne - ${pedido.pontoCarne}, Quantidade de Sal - ${pedido.quantidadeSal}, Observações - ${pedido.observacoes}`;
+        listaPedidos.appendChild(li);
+      });
+    }
+
+    function enviarPedidosWhatsApp() {
+      var pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+
+      if (pedidos.length > 0) {
+        var mensagem = "Segue a lista de pedidos:\n";
+
+        pedidos.forEach(function (pedido, index) {
+          mensagem += `Pedido ${index + 1}:\n`;
+          mensagem += `Ponto da Carne - ${pedido.pontoCarne}, Quantidade de Sal - ${pedido.quantidadeSal}, Observações - ${pedido.observacoes}\n\n`;
+        });
+
+        var linkWhatsApp = "https://wa.me/+5586995289292/?text=" + encodeURIComponent(mensagem);
+        window.open(linkWhatsApp, '_blank');
+      } else {
+        alert("Nenhum pedido para enviar.");
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', exibirPedidos);
+  </script>
+</body>
+</html>
